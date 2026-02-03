@@ -21,9 +21,9 @@ export default function RootLayout({
       <head>
         <script src="/dashboard-console-capture.js" />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body className="min-h-screen">
         <Header />
-        <main className="flex-grow">
+        <main>
           {children}
         </main>
         <Footer />
