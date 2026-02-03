@@ -143,9 +143,9 @@ export default async function PropertyPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* Sidebar */}
+        {/* Sidebar - Changed: Updated sticky top value to account for header height */}
         <div className="lg:col-span-1">
-          <div className="sticky top-8 space-y-6">
+          <div className="sticky top-24 space-y-6">
             {/* Price Card */}
             <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
               <div className="flex items-baseline gap-1 mb-4">
