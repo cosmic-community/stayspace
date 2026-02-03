@@ -27,18 +27,18 @@ export default function ImageGallery({ images, title }: ImageGalleryProps) {
         />
       </div>
 
-      {/* Thumbnails */}
+      {/* Thumbnails - Changed: Fixed border styling to use border instead of ring for cleaner appearance */}
       {validImages.length > 1 && (
-        <div className="flex gap-2 overflow-x-auto pb-2">
+        <div className="flex gap-3 overflow-x-auto pb-2">
           {validImages.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedIndex(index)}
-              className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden ${
+              className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-lg overflow-hidden transition-all ${
                 index === selectedIndex 
-                  ? 'ring-2 ring-primary-500 ring-offset-2' 
-                  : 'opacity-70 hover:opacity-100'
-              } transition-all`}
+                  ? 'border-2 border-primary-500 shadow-md' 
+                  : 'border-2 border-transparent opacity-70 hover:opacity-100 hover:border-gray-300'
+              }`}
             >
               <img
                 src={`${image.imgix_url}?w=200&h=200&fit=crop&auto=format,compress`}
